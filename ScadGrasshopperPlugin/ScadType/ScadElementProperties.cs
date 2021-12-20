@@ -1,4 +1,6 @@
-﻿namespace ScadGrasshopperPlugin.ScadType.Interface
+﻿using ScadGrasshopperPlugin.ScadType.Interface;
+
+namespace ScadGrasshopperPlugin.ScadType
 {
     public sealed class ScadElementProperties : IScadElementProperties
     {

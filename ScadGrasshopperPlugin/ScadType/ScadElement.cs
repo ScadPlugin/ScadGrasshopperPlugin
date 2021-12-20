@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using ScadGrasshopperPlugin.ScadType.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using ScadGrasshopperPlugin.ScadType.Base;
 
-namespace ScadGrasshopperPlugin.ScadType.Interface
+namespace ScadGrasshopperPlugin.ScadType
 {
-    public sealed class ScadElement : IScadElement
+    public sealed class ScadElement: BaseElement
     {
-        public int Number { get; set; }
-        public List<IScadNode> ScadNodes { get; set; }
-        public IScadElementProperties ScadElementProperties { get; set; }
+
+        public ScadNode StartNode { get; set; }
+        public ScadNode EndNode { get; set; }
+
     }
 }
