@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 
 namespace GHPluginInScad
 {
-    [ProgId("PluginName")]
+    [ProgId("ScadGHPlugin")]
     //Create a new GUID
-    [Guid("00000000-0000-0000-0000-000000000000")]
+    [Guid("2C1E51AD-0349-4689-84A7-FF2C93F18D01")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComVisible(true)]
     public class ScadPluginClass : IScadPlugin
@@ -40,7 +40,7 @@ namespace GHPluginInScad
 
 
     //Create a new GUID
-    [Guid("00000000-0000-0000-0000-000000000000")]
+    [Guid("476CC1DA-C052-4B59-B110-DFD6F402F4EA")]
     [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     [ComVisible(true)]
     public interface IScadPlugin
