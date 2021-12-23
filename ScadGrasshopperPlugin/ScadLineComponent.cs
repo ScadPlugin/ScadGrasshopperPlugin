@@ -9,9 +9,9 @@ using ScadGrasshopperPlugin.ScadType.Interface;
 
 namespace ScadGrasshopperPlugin
 {
-    public class ScadGrasshopperPluginComponent : GH_Component
+    public class ScadLineComponent : GH_Component
     {
-        public ScadGrasshopperPluginComponent()
+        public ScadLineComponent()
             : base("ScadGrasshopperPlugin", "TT",
                 "TEST TEST",
                 "SCAD", "TEST")
@@ -23,13 +23,13 @@ namespace ScadGrasshopperPlugin
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddLineParameter("Simple Line", "L", "Just line", GH_ParamAccess.item);
+            pManager.AddLineParameter("Line", "L", "Just line", GH_ParamAccess.item);
 
         }
 
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddParameter(new ScadLineParameter(), "ScadLine", "S_L", "SCAD a line element",
+            pManager.AddParameter(new ScadLineParameter(), "ScadLine", "S_L", "SCAD line element",
                 GH_ParamAccess.item);
         }
 

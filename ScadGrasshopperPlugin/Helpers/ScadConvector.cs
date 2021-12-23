@@ -10,6 +10,9 @@ using ScadGrasshopperPlugin.ScadType.Interface;
 
 namespace ScadGrasshopperPlugin.Helpers
 {
+    /// <summary>
+    /// Класс конвектор из GH классов в SCAD классы
+    /// </summary>
     public static class ScadConvector
     {
         #region Public
@@ -18,9 +21,9 @@ namespace ScadGrasshopperPlugin.Helpers
         /// Конвертация линий Rhino в 2х узловые элементы SCAD
         /// </summary>
         /// <param name="src">Rhino src</param>
-        /// <param name="scadLine">Scad line</param>
+        /// <param name="scadLineLine">Scad line</param>
         /// <returns>True - сонвертация успешна</returns>
-        public static bool ToScadElement(object src, ScadElement scadLine)
+        public static bool ToScadElement(object src, ScadLineElement scadLineLine)
         {
             if (src == null)
             {
@@ -33,9 +36,9 @@ namespace ScadGrasshopperPlugin.Helpers
                 return false;
             }
 
-            scadLine.ScadNodes = CreateScadNodeLine((Line) src);
-            scadLine.StartNode = scadLine.ScadNodes[0];
-            scadLine.EndNode = scadLine.ScadNodes[1];
+            scadLineLine.ScadNodes = CreateScadNodeLine((Line) src);
+            scadLineLine.StartNode = scadLineLine.ScadNodes[0];
+            scadLineLine.EndNode = scadLineLine.ScadNodes[1];
             return true;
         }
 

@@ -11,17 +11,17 @@ using ScadGrasshopperPlugin.ScadType.Interface;
 
 namespace ScadGrasshopperPlugin.GHDataTypes.Elements
 {
-    public class ScadLineType : GH_Goo<ScadElement>
+    public class ScadLineType : GH_Goo<ScadLineElement>
     {
-        private readonly ScadElement _scadElement;
+        private readonly ScadLineElement _scadLineElement;
 
         public ScadLineType()
         {
         }
 
-        public ScadLineType(ScadElement scadElement)
+        public ScadLineType(ScadLineElement scadLineElement)
         {
-            _scadElement = scadElement;
+            _scadLineElement = scadLineElement;
         }
 
         public ScadLineType(ScadLineType scadLineType)
@@ -37,14 +37,14 @@ namespace ScadGrasshopperPlugin.GHDataTypes.Elements
 
         public override string ToString()
         {
-            return $"ScadLine: Num - {Value.Number}; Id - {Value.Id}";
+            return $"ScadLine";
         }
 
         public override bool IsValid
         {
             get
             {
-                if (_scadElement == null)
+                if (_scadLineElement == null)
                 {
                     return false;
                 }
@@ -60,11 +60,11 @@ namespace ScadGrasshopperPlugin.GHDataTypes.Elements
         {
             if (source == null) { return false; }
 
-            ScadElement scadLine = new ScadElement();
+            ScadLineElement scadLineLine = new ScadLineElement();
 
-            if (ScadConvector.ToScadElement(source, scadLine))
+            if (ScadConvector.ToScadElement(source, scadLineLine))
             {
-                Value = scadLine;
+                Value = scadLineLine;
                 return true;
             }
 

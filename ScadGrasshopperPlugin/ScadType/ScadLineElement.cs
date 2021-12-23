@@ -6,7 +6,7 @@ using ScadGrasshopperPlugin.ScadType.Base;
 
 namespace ScadGrasshopperPlugin.ScadType
 {
-    public sealed class ScadElement: BaseElement
+    public sealed class ScadLineElement: Element
     {
 
         public ScadNode StartNode { get; set; }

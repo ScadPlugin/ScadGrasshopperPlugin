@@ -7,9 +7,9 @@ using ScadGrasshopperPlugin.ScadType.Interface;
 
 namespace ScadGrasshopperPlugin.ScadType.Base
 {
-    public class BaseElement
+    public class Element
     {
-        public BaseElement()
+        public Element()
         {
 
             Id = Guid.NewGuid().ToString("N");
