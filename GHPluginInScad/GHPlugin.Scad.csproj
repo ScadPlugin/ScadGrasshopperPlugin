@@ -51,6 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\Interfaces\IScadBuilder.cs" />
+    <Compile Include="Builder\ScadBuilder.cs" />
+    <Compile Include="Builder\ScadBuilderDirector.cs" />
+    <Compile Include="Builder\ScadProcess\ElementCreator.cs" />
     <Compile Include="ScadPluginClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +63,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GHPlugin.Core\GHPlugin.Core.csproj">
+      <Project>{710b9e50-6820-4edb-bc00-703769808b17}</Project>
+      <Name>GHPlugin.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
