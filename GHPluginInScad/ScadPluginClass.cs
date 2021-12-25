@@ -1,10 +1,8 @@
-﻿using ScadPluginLibrary.Helpers;
+﻿using System.Runtime.InteropServices;
+using ScadPluginLibrary.Helpers;
 using ScadPluginLibrary.SCADClasses;
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
-namespace GHPluginInScad
+namespace GHPlugin.Scad
 {
     [ProgId("ScadGHPlugin")]
     //Create a new GUID
@@ -18,6 +16,7 @@ namespace GHPluginInScad
         {
             try
             {
+
                 Engine engineSCAD = new Engine(engine);
                 //Editor editor = engineSCAD.GetEditor();
                 //Model model = engineSCAD.GetModel();

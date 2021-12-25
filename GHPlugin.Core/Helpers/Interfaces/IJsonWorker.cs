@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ScadGrasshopperPlugin.ScadType;
+﻿using GHPlugin.Core.Entities;
 
-namespace ScadGrasshopperPlugin.Helpers.Interfaces
+namespace GHPlugin.Core.Helpers.Interfaces
 {
     /// <summary>
     /// фывфыв
@@ -18,5 +13,12 @@ namespace ScadGrasshopperPlugin.Helpers.Interfaces
         /// <param name="path">Путь сохранения</param>
         /// <param name="scad">класс экспорта</param>
         void SaveToJson(string path, MainScad scad);
+
+        /// <summary>
+        /// Десиарилизация JSON из файла
+        /// </summary>
+        /// <param name="path"></param>
+        T DeserializeFile<T>(string path, T deserializeType);
+
     }
 }

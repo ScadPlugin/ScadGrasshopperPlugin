@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Grasshopper.Kernel;
-using ScadGrasshopperPlugin.GHDataTypes.Elements;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
 
-namespace ScadGrasshopperPlugin.GHParameters
+namespace ScadGrasshopperPlugin.Components.GHParameters
 {
     public class ScadLineParameter : GH_Param<ScadLineType>
     {

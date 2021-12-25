@@ -1,15 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grasshopper.Kernel;
+﻿using GHPlugin.Core.Entities.Elements;
 using Grasshopper.Kernel.Types;
-using Rhino.Geometry;
 using ScadGrasshopperPlugin.Helpers;
-using ScadGrasshopperPlugin.ScadType;
-using ScadGrasshopperPlugin.ScadType.Interface;
 
-namespace ScadGrasshopperPlugin.GHDataTypes.Elements
+namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
 {
     public class ScadLineType : GH_Goo<ScadLineElement>
     {
@@ -60,11 +53,11 @@ namespace ScadGrasshopperPlugin.GHDataTypes.Elements
         {
             if (source == null) { return false; }
 
-            ScadLineElement scadLineLine = new ScadLineElement();
+            ScadLineElement scadLine = new ScadLineElement();
 
-            if (ScadConvector.ToScadElement(source, scadLineLine))
+            if (ScadConvector.ToScadElement(source, ref scadLine))
             {
-                Value = scadLineLine;
+                Value = scadLine;
                 return true;
             }
 

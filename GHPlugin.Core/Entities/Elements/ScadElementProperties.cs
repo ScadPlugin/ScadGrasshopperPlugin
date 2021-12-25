@@ -1,6 +1,6 @@
-﻿using ScadGrasshopperPlugin.ScadType.Interface;
+﻿using GHPlugin.Core.Entities.Elements.Interface;
 
-namespace ScadGrasshopperPlugin.ScadType
+namespace GHPlugin.Core.Entities.Elements
 {
     public sealed class ScadElementProperties : IScadElementProperties
     {

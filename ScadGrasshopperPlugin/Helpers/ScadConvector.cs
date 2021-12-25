@@ -1,12 +1,6 @@
-﻿using System;
+﻿using Rhino.Geometry;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rhino.Geometry;
-using ScadGrasshopperPlugin.GHDataTypes.Elements;
-using ScadGrasshopperPlugin.ScadType;
-using ScadGrasshopperPlugin.ScadType.Interface;
+using GHPlugin.Core.Entities.Elements;
 
 namespace ScadGrasshopperPlugin.Helpers
 {
@@ -23,7 +17,7 @@ namespace ScadGrasshopperPlugin.Helpers
         /// <param name="src">Rhino src</param>
         /// <param name="scadLineLine">Scad line</param>
         /// <returns>True - сонвертация успешна</returns>
-        public static bool ToScadElement(object src, ScadLineElement scadLineLine)
+        public static bool ToScadElement(object src, ref ScadLineElement scadLineLine)
         {
             if (src == null)
             {

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ScadGrasshopperPlugin.GHDataTypes.Elements;
-using ScadGrasshopperPlugin.ScadType;
+﻿using System.Collections.Generic;
+using GHPlugin.Core.Entities;
+using GHPlugin.Core.Entities.Elements.Base;
 
-namespace ScadGrasshopperPlugin.Helpers
+namespace GHPlugin.Core.Helpers
 {
     /// <summary>
     /// Фабрика по заполнению класса для инпорта
@@ -15,11 +11,11 @@ namespace ScadGrasshopperPlugin.Helpers
     {
         private MainScad _mainScad;
 
-        public FillFactory(List<ScadLineType> scadLineList)
+        public FillFactory(List<Element> scadElement)
         {
             _mainScad = new MainScad();
 
-            AddElements(scadLineList);
+            AddElements(scadElement);
         }
 
 
@@ -38,18 +34,16 @@ namespace ScadGrasshopperPlugin.Helpers
         /// <summary>
         /// Добавление элементов в главный класс
         /// </summary>
-        /// <param name="scadLineList">Список элементов приходящих с GH</param>
-        private void AddElements(List<ScadLineType> scadLineList)
+        /// <param name="scadElements">Список элементов приходящих с GH</param>
+        private void AddElements(List<Element>  scadElements)
         {
-            if (scadLineList == null || scadLineList.Count == 0)
+            if (scadElements == null || scadElements.Count == 0)
             {
                 return;
             }
 
-            foreach (var scadLineType in scadLineList)
-            {
-                _mainScad.ScadElements.Add(scadLineType.Value);
-            }
+            _mainScad.ScadElements.AddRange(scadElements);
+          
         }
 
         #endregion

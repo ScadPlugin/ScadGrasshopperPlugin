@@ -8,8 +8,8 @@
     <ProjectGuid>{1DCA7482-83A1-424E-BB1D-A072431B6C3D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GHPluginInScad</RootNamespace>
-    <AssemblyName>GHPluginInScad</AssemblyName>
+    <RootNamespace>GHPlugin.Scad</RootNamespace>
+    <AssemblyName>GHPlugin.Scad</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -58,6 +58,7 @@
     <None Include="BBF.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

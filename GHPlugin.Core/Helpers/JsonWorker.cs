@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
+using GHPlugin.Core.Entities;
+using GHPlugin.Core.Helpers.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using ScadGrasshopperPlugin.Helpers.Interfaces;
-using ScadGrasshopperPlugin.ScadType;
 
-namespace ScadGrasshopperPlugin.Helpers
+namespace GHPlugin.Core.Helpers
 {
     /// <summary>
     /// Класс экспорта в JSON файл 
     /// </summary>
     public class JsonWorker:IJsonWorker
     {
+        #region Public
         public void SaveToJson(string path, MainScad scad)
         {
 
@@ -31,5 +27,22 @@ namespace ScadGrasshopperPlugin.Helpers
                 serializer.Serialize(file, scad);
             }
         }
+
+        public T DeserializeFile<T>(string path, T deserializeType)
+        {
+
+            T desObjOut = JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+
+            return desObjOut;
+        }
+
+        #endregion
+
+
+        #region Private
+
+
+
+        #endregion
     }
 }

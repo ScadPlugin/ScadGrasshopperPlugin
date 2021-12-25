@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Grasshopper.Kernel;
+using ScadGrasshopperPlugin.Components.GHParameters;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
+using System;
 using System.Collections.Generic;
-using ScadGrasshopperPlugin.GHParameters;
-using Grasshopper.Kernel;
-using Rhino.Geometry;
-using ScadGrasshopperPlugin.GHDataTypes.Elements;
-using ScadGrasshopperPlugin.Helpers;
-using ScadGrasshopperPlugin.ScadType;
+using GHPlugin.Core;
+using GHPlugin.Core.Entities;
+using GHPlugin.Core.Entities.Elements.Base;
+using GHPlugin.Core.Helpers;
 
 namespace ScadGrasshopperPlugin
 {
@@ -53,7 +54,7 @@ namespace ScadGrasshopperPlugin
             if (isSaveJson)
             {
                 
-                FillFactory factory = new FillFactory(scadLineList);
+                FillFactory factory = new FillFactory(CreateScadElemList(scadLineList));
                 MainScad mainScad = factory.GetMainScad;
 
                 ScadCreator scad = new ScadCreator(mainScad);
@@ -84,6 +85,25 @@ namespace ScadGrasshopperPlugin
             get { return new Guid("8A8983B6-BC61-4B24-8489-4CD345E34AD1"); }
         }
 
-       
+        #region Private
+
+        /// <summary>
+        /// Заполняет список элементов SCAD из входящего списка данных GH
+        /// </summary>
+        /// <param name="scadLineList">Данные GH</param>
+        /// <returns></returns>
+        private List<Element> CreateScadElemList(List<ScadLineType> scadLineList)
+        {
+            List<Element> listScadElements = new List<Element>();
+
+            foreach (var scadLineType in scadLineList)
+            {
+                listScadElements.Add(scadLineType.Value);
+            }
+
+            return listScadElements;
+        }
+
+        #endregion
     }
 }

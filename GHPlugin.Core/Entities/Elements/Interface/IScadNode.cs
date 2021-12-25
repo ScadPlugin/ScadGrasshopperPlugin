@@ -1,4 +1,4 @@
-﻿namespace ScadGrasshopperPlugin.ScadType.Interface
+﻿namespace GHPlugin.Core.Entities.Elements.Interface
 {
     public interface IScadNode
     {

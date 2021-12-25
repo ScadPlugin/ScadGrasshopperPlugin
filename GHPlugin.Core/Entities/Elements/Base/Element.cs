@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ScadGrasshopperPlugin.ScadType.Interface;
+using GHPlugin.Core.Entities.Elements.Interface;
 
-namespace ScadGrasshopperPlugin.ScadType.Base
+namespace GHPlugin.Core.Entities.Elements.Base
 {
     public class Element
     {

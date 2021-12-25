@@ -3,9 +3,8 @@ using Grasshopper.Kernel;
 using Rhino.Geometry;
 using System;
 using System.Collections.Generic;
-using ScadGrasshopperPlugin.GHDataTypes.Elements;
-using ScadGrasshopperPlugin.GHParameters;
-using ScadGrasshopperPlugin.ScadType.Interface;
+using ScadGrasshopperPlugin.Components.GHParameters;
+
 
 namespace ScadGrasshopperPlugin
 {
