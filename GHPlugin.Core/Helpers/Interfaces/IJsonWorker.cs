@@ -18,7 +18,7 @@ namespace GHPlugin.Core.Helpers.Interfaces
         /// Десиарилизация JSON из файла
         /// </summary>
         /// <param name="path"></param>
-        T DeserializeFile<T>(string path, T deserializeType);
+        T DeserializeFile<T>(string path);
 
     }
 }

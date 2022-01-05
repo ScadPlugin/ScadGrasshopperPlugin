@@ -28,7 +28,7 @@ namespace GHPlugin.Core.Helpers
             }
         }
 
-        public T DeserializeFile<T>(string path, T deserializeType)
+        public T DeserializeFile<T>(string path)
         {
 
             T desObjOut = JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
