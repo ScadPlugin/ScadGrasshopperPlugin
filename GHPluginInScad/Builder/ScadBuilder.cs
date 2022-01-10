@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GHPlugin.Core.Entities;
-using GHPlugin.Core.Helpers;
 using GHPlugin.Scad.Builder.Interfaces;
 using GHPlugin.Scad.Builder.ScadProcess;
+using GHPlugin.Scad.Core.Entities;
 
 namespace GHPlugin.Scad.Builder
 {
-    public class ScadBuilder : IScadBuilder
+    internal class ScadBuilder : IScadBuilder
     {
-        private const string PATH = @"C:\ProgramData\SCAD Soft\Plugins\PreProcessor\gJson.json";
+        
         private dynamic _engine;
         private MainScad _scad;
-        private ElementCreator _elementCreator = new ElementCreator();
+        private ElementCreator _elementCreator;
 
-        public ScadBuilder( dynamic engine)
+        public ScadBuilder( dynamic engine, MainScad scad)
         {
-            
             _engine = engine;
-            this.Reset();
+            _scad = scad;
+            Reset();
         }
 
 
@@ -29,24 +28,21 @@ namespace GHPlugin.Scad.Builder
 
         public void Reset()
         {
-            this._elementCreator = new ElementCreator();
+            _elementCreator = new ElementCreator(_engine, _scad);
         }
 
         public void BuildElements()
         {
+          _elementCreator.CreateElementScheme();
 
         }
 
-        public void LoadScadSetting()
-        {
-            JsonWorker jsonWorker = new JsonWorker();
-            _scad = jsonWorker.DeserializeFile<MainScad>(PATH);
-        }
         #endregion
+
 
         #region Private
 
-        
+
 
         #endregion
     }

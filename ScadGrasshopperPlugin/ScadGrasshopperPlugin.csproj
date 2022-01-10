@@ -13,7 +13,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\GHPlugin.Core\GHPlugin.Core.csproj" />
+    <ProjectReference Include="..\GHPluginInScad\GHPlugin.Scad.csproj" />
   </ItemGroup>
   
   <PropertyGroup Condition="$(Configuration) == 'Debug' AND $([MSBuild]::IsOSPlatform(Windows))">

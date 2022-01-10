@@ -1,4 +1,7 @@
 ﻿using System.Runtime.InteropServices;
+using GHPlugin.Scad.Builder;
+using GHPlugin.Scad.Core.Entities;
+using GHPlugin.Scad.Core.Helpers;
 using ScadPluginLibrary.Helpers;
 using ScadPluginLibrary.SCADClasses;
 
@@ -18,13 +21,19 @@ namespace GHPlugin.Scad
             {
 
                 Engine engineSCAD = new Engine(engine);
-                //Editor editor = engineSCAD.GetEditor();
-                //Model model = engineSCAD.GetModel();
-                //Result result = engineSCAD.GetResult();
-
+       
                 //TO DO
+                JsonWorker jsonWorker = new JsonWorker();
 
-                ScadDebug.MessageShow("Hello SCAD");
+                MainScad scad =
+                    jsonWorker.DeserializeFile<MainScad>(@"C:\ProgramData\SCAD Soft\Plugins\PreProcessor\gJson.json");
+                
+                var director = new ScadBuilderDirector();
+                var builder = new ScadBuilder(engine, scad);
+
+                director.ScadBuilder = builder;
+                director.BuildOnlyElements();
+                
             }
             finally
             {

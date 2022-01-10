@@ -7,7 +7,7 @@ using GHPlugin.Scad.Builder.Interfaces;
 
 namespace GHPlugin.Scad.Builder
 {
-    public class ScadBuilderDirector
+    internal class ScadBuilderDirector
     {
         private IScadBuilder _builder;
         public IScadBuilder ScadBuilder

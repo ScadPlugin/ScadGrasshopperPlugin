@@ -1,14 +1,13 @@
-﻿using Grasshopper.Kernel;
+﻿using System;
+using System.Collections.Generic;
+using GHPlugin.Scad.Core.Entities;
+using GHPlugin.Scad.Core.Entities.Elements.Base;
+using GHPlugin.Scad.Core.Helpers;
+using Grasshopper.Kernel;
 using ScadGrasshopperPlugin.Components.GHParameters;
 using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
-using System;
-using System.Collections.Generic;
-using GHPlugin.Core;
-using GHPlugin.Core.Entities;
-using GHPlugin.Core.Entities.Elements.Base;
-using GHPlugin.Core.Helpers;
 
-namespace ScadGrasshopperPlugin
+namespace ScadGrasshopperPlugin.Components
 {
     public class MainScadComponent : GH_Component
     {

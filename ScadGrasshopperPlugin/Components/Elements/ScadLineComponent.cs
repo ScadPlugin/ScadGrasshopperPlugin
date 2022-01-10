@@ -1,12 +1,9 @@
-using Grasshopper;
+using System;
 using Grasshopper.Kernel;
 using Rhino.Geometry;
-using System;
-using System.Collections.Generic;
 using ScadGrasshopperPlugin.Components.GHParameters;
 
-
-namespace ScadGrasshopperPlugin
+namespace ScadGrasshopperPlugin.Components.Elements
 {
     public class ScadLineComponent : GH_Component
     {

@@ -39,6 +39,9 @@
     <AssemblyOriginatorKeyFile>BBF.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="ScadPluginLibrary, Version=1.2.2119.11, Culture=neutral, PublicKeyToken=22e0d4a920a2fac6, processorArchitecture=MSIL">
       <HintPath>..\packages\ScadPluginLibrary.1.2.2119.11\lib\net48\ScadPluginLibrary.dll</HintPath>
     </Reference>
@@ -55,6 +58,24 @@
     <Compile Include="Builder\ScadBuilder.cs" />
     <Compile Include="Builder\ScadBuilderDirector.cs" />
     <Compile Include="Builder\ScadProcess\ElementCreator.cs" />
+    <Compile Include="Core\Entities\Elements\Base\Element.cs" />
+    <Compile Include="Core\Entities\Elements\Interface\IScadElementProperties.cs" />
+    <Compile Include="Core\Entities\Elements\Interface\IScadNode.cs" />
+    <Compile Include="Core\Entities\Elements\ScadElementProperties.cs" />
+    <Compile Include="Core\Entities\Elements\ScadLineElement.cs" />
+    <Compile Include="Core\Entities\Elements\ScadNode.cs" />
+    <Compile Include="Core\Entities\MainScad.cs" />
+    <Compile Include="Core\Helpers\FillFactory.cs" />
+    <Compile Include="Core\Helpers\Interfaces\IJsonWorker.cs" />
+    <Compile Include="Core\Helpers\Interfaces\IScadCreater.cs" />
+    <Compile Include="Core\Helpers\JsonWorker.cs" />
+    <Compile Include="Core\Helpers\Renumber.cs" />
+    <Compile Include="Core\Helpers\ScadCreator.cs" />
+    <Compile Include="FEMFactory\Creator\Base\BaseFEMCreator.cs" />
+    <Compile Include="FEMFactory\Creator\BeamFEMCreator.cs" />
+    <Compile Include="FEMFactory\ElementFactory.cs" />
+    <Compile Include="FEMFactory\Elements\BeamFEMElement.cs" />
+    <Compile Include="FEMFactory\Elements\Interfaces\IFEMElement.cs" />
     <Compile Include="ScadPluginClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,12 +84,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\GHPlugin.Core\GHPlugin.Core.csproj">
-      <Project>{710b9e50-6820-4edb-bc00-703769808b17}</Project>
-      <Name>GHPlugin.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
