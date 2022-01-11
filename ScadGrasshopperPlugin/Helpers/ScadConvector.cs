@@ -1,6 +1,6 @@
 ﻿using Rhino.Geometry;
 using System.Collections.Generic;
-using GHPlugin.Core.Entities.Elements;
+using GHPlugin.Scad.Core.Entities.Elements;
 
 namespace ScadGrasshopperPlugin.Helpers
 {

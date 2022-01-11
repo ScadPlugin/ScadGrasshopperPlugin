@@ -1,4 +1,4 @@
-﻿using GHPlugin.Core.Entities.Elements;
+﻿using GHPlugin.Scad.Core.Entities.Elements;
 using Grasshopper.Kernel.Types;
 using ScadGrasshopperPlugin.Helpers;
 
