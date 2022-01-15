@@ -55,7 +55,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
 
             ScadLineElement scadLine = new ScadLineElement();
 
-            if (ScadConvector.ToScadElement(source, ref scadLine))
+            if (ScadConvector.GHLineToScadElement(source, ref scadLine))
             {
                 Value = scadLine;
                 return true;

@@ -17,7 +17,7 @@ namespace ScadGrasshopperPlugin.Helpers
         /// <param name="src">Rhino src</param>
         /// <param name="scadLineLine">Scad line</param>
         /// <returns>True - сонвертация успешна</returns>
-        public static bool ToScadElement(object src, ref ScadLineElement scadLineLine)
+        public static bool GHLineToScadElement(object src, ref ScadLineElement scadLineLine)
         {
             if (src == null)
             {

@@ -8,9 +8,9 @@ namespace ScadGrasshopperPlugin.Components.Elements
     public class ScadLineComponent : GH_Component
     {
         public ScadLineComponent()
-            : base("ScadGrasshopperPlugin", "TT",
-                "TEST TEST",
-                "SCAD", "TEST")
+            : base("ScadGrasshopperPlugin", "SCADLine",
+                "Convert GH line to SCAD++ line",
+                "SCAD", "Element")
         {
         }
 
@@ -19,7 +19,7 @@ namespace ScadGrasshopperPlugin.Components.Elements
 
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddLineParameter("Line", "L", "Just line", GH_ParamAccess.item);
+            pManager.AddLineParameter("Line", "L", "GH Line", GH_ParamAccess.item);
 
         }
 
