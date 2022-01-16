@@ -9,7 +9,7 @@ namespace ScadGrasshopperPlugin.Components.Elements
     public class GHPolylineToLine : GH_Component
     {
         public GHPolylineToLine()
-            : base("GHPolylineToLine", "TT",
+            : base("GHPolylineToLine", "PolylineToLines",
                 "Convert GH polyline to list lines",
                 "SCAD", "Helper")
         {
