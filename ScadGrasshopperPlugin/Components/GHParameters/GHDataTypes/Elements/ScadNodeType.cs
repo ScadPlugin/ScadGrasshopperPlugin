@@ -18,6 +18,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
         public ScadNodeType( ScadNode node)
         {
             _scadNode = node;
+            Value = _scadNode;
         }
 
         public ScadNodeType( ScadNodeType scadNodeType)

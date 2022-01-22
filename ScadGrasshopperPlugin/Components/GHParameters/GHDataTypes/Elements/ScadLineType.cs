@@ -15,6 +15,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
         public ScadLineType(ScadLineElement scadLineElement)
         {
             _scadLineElement = scadLineElement;
+            Value = _scadLineElement;
         }
 
         public ScadLineType(ScadLineType scadLineType)

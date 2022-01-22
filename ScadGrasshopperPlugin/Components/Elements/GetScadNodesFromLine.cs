@@ -4,8 +4,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using GHPlugin.Scad.Core.Entities.Elements;
 using Grasshopper.Kernel;
 using ScadGrasshopperPlugin.Components.GHParameters;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
 
 namespace ScadGrasshopperPlugin.Components.Elements
 {
@@ -26,12 +28,20 @@ namespace ScadGrasshopperPlugin.Components.Elements
         protected override void RegisterOutputParams(GH_OutputParamManager pManager)
         {
             pManager.AddParameter(new ScadNodeParameter(), "ScadNodes", "S_N", "nodes for SCAD",
-                GH_ParamAccess.item);
+                GH_ParamAccess.list);
         }
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
-            throw new NotImplementedException();
+            ScadLineType scadLine = new ScadLineType();
+            if (!DA.GetData(0, ref scadLine)) return;
+            var node = scadLine.Value.EndNode;
+            ScadNodeType nodeTypeStart = new ScadNodeType(scadLine.Value.StartNode);
+            ScadNodeType nodeTypeEnd = new ScadNodeType(scadLine.Value.EndNode);
+
+            List<ScadNodeType> nodes = new List<ScadNodeType>(){nodeTypeStart, nodeTypeEnd};
+            
+            DA.SetData(0, nodes);
         }
         
         public override Guid ComponentGuid  => new Guid("E4CCAD19-EE86-49BD-8ECE-0221FC89223F");
