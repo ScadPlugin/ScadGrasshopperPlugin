@@ -35,13 +35,13 @@ namespace ScadGrasshopperPlugin.Components.Elements
         {
             ScadLineType scadLine = new ScadLineType();
             if (!DA.GetData(0, ref scadLine)) return;
-            var node = scadLine.Value.EndNode;
+
             ScadNodeType nodeTypeStart = new ScadNodeType(scadLine.Value.StartNode);
             ScadNodeType nodeTypeEnd = new ScadNodeType(scadLine.Value.EndNode);
 
             List<ScadNodeType> nodes = new List<ScadNodeType>(){nodeTypeStart, nodeTypeEnd};
             
-            DA.SetData(0, nodes);
+            DA.SetDataList(0, nodes);
         }
         
         public override Guid ComponentGuid  => new Guid("E4CCAD19-EE86-49BD-8ECE-0221FC89223F");

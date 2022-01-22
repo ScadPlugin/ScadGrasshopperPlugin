@@ -32,7 +32,8 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
 
         public override string ToString()
         {
-            return $"Node: [{Value.X}, {Value.Y}, {Value.Z}]";
+            return $"S_Node: [{Value.X}, {Value.Y}, {Value.Z}]";
+           
         }
 
         public override bool IsValid

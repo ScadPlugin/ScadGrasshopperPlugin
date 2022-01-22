@@ -32,6 +32,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
         public override string ToString()
         {
             return $"ScadLine";
+            
         }
 
         public override bool IsValid
