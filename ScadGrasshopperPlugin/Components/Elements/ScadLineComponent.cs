@@ -1,7 +1,11 @@
 using System;
+using GHPlugin.Scad.Core.Entities.Elements;
 using Grasshopper.Kernel;
+using Grasshopper.Kernel.Data;
 using Rhino.Geometry;
 using ScadGrasshopperPlugin.Components.GHParameters;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
+using ScadGrasshopperPlugin.Helpers;
 
 namespace ScadGrasshopperPlugin.Components.Elements
 {
@@ -20,6 +24,10 @@ namespace ScadGrasshopperPlugin.Components.Elements
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
             pManager.AddLineParameter("Line", "L", "GH Line", GH_ParamAccess.item);
+           
+            pManager.AddParameter(new ScadPropertiesParameter(), "ScadProp", "S_Pr", "Properties for SCAD element",
+                GH_ParamAccess.item);
+            
 
         }
 
@@ -32,9 +40,14 @@ namespace ScadGrasshopperPlugin.Components.Elements
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             Line line = new Line();
+            ScadPropertiesType scadProperties = new ScadPropertiesType();
             if (!DA.GetData(0, ref line)) return;
+            DA.GetData(1, ref scadProperties);
+            
+            ScadLineType scadLine = new ScadLineType(ConvertGhLineToScadLine(line));
+            scadLine.Value.ScadElementProperties = scadProperties.Value;
 
-            DA.SetData(0, line);
+            DA.SetData(0, scadLine);
         }
 
         protected override System.Drawing.Bitmap Icon => null;
@@ -46,6 +59,25 @@ namespace ScadGrasshopperPlugin.Components.Elements
 
 
         #region Private
+
+        private ScadLineElement ConvertGhLineToScadLine(Line ghLine)
+        {
+            if (ghLine == null)
+            {
+                throw new ArgumentNullException("Empty object");
+            }
+
+            ScadLineElement scadLine = new ScadLineElement();
+
+            if (ScadConvector.GHLineToScadElement(ghLine, ref scadLine))
+            {
+                return scadLine;
+            }
+            else
+            {
+                throw new ArgumentException("Error convert Line to SCAD line");
+            }
+        }
 
         #endregion
     }

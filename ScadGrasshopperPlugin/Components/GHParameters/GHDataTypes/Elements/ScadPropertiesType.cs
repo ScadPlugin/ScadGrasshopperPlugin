@@ -1,4 +1,5 @@
-﻿using GHPlugin.Scad.Core.Entities.Elements.Interface;
+﻿using GHPlugin.Scad.Core.Entities.Elements;
+using GHPlugin.Scad.Core.Entities.Elements.Interface;
 using Grasshopper.Kernel.Types;
 
 namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
@@ -11,7 +12,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
         {
             
         }
-
+        
         public ScadPropertiesType(IScadElementProperties properties)
         {
             _scadElementProperties = properties;
@@ -29,6 +30,10 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
 
         public override string ToString()
         {
+            if (_scadElementProperties == null)
+            {
+                return $"NULL";
+            }
             return $"S_Properties:\n  -Rigid: {_scadElementProperties.RigidCode}";
         }
 
@@ -40,7 +45,6 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
                 {
                     return false;
                 }
-
                 return true;
             }
         }
