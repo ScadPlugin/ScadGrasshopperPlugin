@@ -48,7 +48,8 @@ namespace ScadGrasshopperPlugin.Components.Properties
         {
             string txt = String.Empty;
             if (!DA.GetData(0, ref txt)) return;
-            ScadElementProperties elementProperties = new ScadElementProperties() {RigidCode = txt};
+            //ScadElementProperties elementProperties = new ScadElementProperties() {RigidCode = txt};
+            ScadElementProperties elementProperties = new ScadElementProperties();
             ScadPropertiesType scadProperties = new ScadPropertiesType(elementProperties);
 
             DA.SetData(0, scadProperties);

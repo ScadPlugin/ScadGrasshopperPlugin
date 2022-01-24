@@ -1,4 +1,6 @@
-﻿using GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces;
+﻿using System;
+using GHPlugin.Scad.Core.Entities.ElementProperties;
+using GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces;
 using Grasshopper.Kernel.Types;
 
 namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementProperties
@@ -9,7 +11,11 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
        private readonly IScadElementProperties _scadElementProperties;
         public ScadPropertiesType()
         {
-            
+            _scadElementProperties = new ScadElementProperties()
+            {
+                RigidCode = null
+            };
+            Value = _scadElementProperties;
         }
         
         public ScadPropertiesType(IScadElementProperties properties)
@@ -29,11 +35,11 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
 
         public override string ToString()
         {
-            if (_scadElementProperties == null)
+            if (_scadElementProperties.RigidCode == null)
             {
-                return $"NULL";
+                return $"S_Properties:\n  -Rigid: NULL";
             }
-            return $"S_Properties:\n  -Rigid: {_scadElementProperties.RigidCode}";
+            return $"S_Properties:\n  -Rigid: {_scadElementProperties.RigidCode.RigidCode}";
         }
 
         public override bool IsValid
