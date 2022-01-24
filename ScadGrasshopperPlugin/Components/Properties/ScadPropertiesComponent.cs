@@ -28,7 +28,7 @@ namespace ScadGrasshopperPlugin.Components.Properties
         protected override void RegisterInputParams(GH_InputParamManager pManager)
         {
             pManager.AddTextParameter(
-                "RigidCoe", 
+                "RigidCode", 
                 "S_RC", 
                 "Element rigidcode", 
                 GH_ParamAccess.item);
