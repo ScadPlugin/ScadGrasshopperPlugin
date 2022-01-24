@@ -9,6 +9,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
    {
 
        private readonly IScadElementProperties _scadElementProperties;
+
         public ScadPropertiesType()
         {
             _scadElementProperties = new ScadElementProperties()

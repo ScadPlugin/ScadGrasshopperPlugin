@@ -34,7 +34,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
 
         public override string ToString()
         {
-            return $"Rigid: {_scadElementRigid.Name}";
+            return $"Rigid: {_scadElementRigid.Name}, {_scadElementRigid.RigidCode}";
         }
 
         public override bool IsValid
