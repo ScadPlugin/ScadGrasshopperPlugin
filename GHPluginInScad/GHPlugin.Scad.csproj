@@ -58,6 +58,8 @@
     <Compile Include="Builder\ScadBuilder.cs" />
     <Compile Include="Builder\ScadBuilderDirector.cs" />
     <Compile Include="Builder\ScadProcess\ElementCreator.cs" />
+    <Compile Include="Core\Entities\ElementProperties\ElementRigid.cs" />
+    <Compile Include="Core\Entities\ElementProperties\Interfaces\IElementRigid.cs" />
     <Compile Include="Core\Entities\Elements\Base\Element.cs" />
     <Compile Include="Core\Entities\ElementProperties\Interfaces\IScadElementProperties.cs" />
     <Compile Include="Core\Entities\Elements\Interface\IScadNode.cs" />
