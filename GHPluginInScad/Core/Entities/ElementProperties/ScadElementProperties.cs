@@ -4,6 +4,6 @@ namespace GHPlugin.Scad.Core.Entities.ElementProperties
 {
     public sealed class ScadElementProperties : IScadElementProperties
     {
-        public IElementRigid RigidCode { get; set; }
+        public IElementRigid ElementRigid { get; set; }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IScadElementProperties
     {
-        IElementRigid RigidCode { get; set; }
+        IElementRigid ElementRigid { get; set; }
     }
 }

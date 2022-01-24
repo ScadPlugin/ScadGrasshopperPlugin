@@ -13,7 +13,7 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
         {
             _scadElementProperties = new ScadElementProperties()
             {
-                RigidCode = null
+                ElementRigid = null
             };
             Value = _scadElementProperties;
         }
@@ -35,11 +35,11 @@ namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementPrope
 
         public override string ToString()
         {
-            if (_scadElementProperties.RigidCode == null)
+            if (_scadElementProperties.ElementRigid == null)
             {
                 return $"S_Properties:\n  -Rigid: NULL";
             }
-            return $"S_Properties:\n  -Rigid: {_scadElementProperties.RigidCode.RigidCode}";
+            return $"S_Properties:\n  -Rigid: {_scadElementProperties.ElementRigid.RigidCode}";
         }
 
         public override bool IsValid
