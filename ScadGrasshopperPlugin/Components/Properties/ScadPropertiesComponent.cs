@@ -7,6 +7,7 @@ using GHPlugin.Scad.Core.Entities.ElementProperties;
 using GHPlugin.Scad.Core.Entities.Elements;
 using Grasshopper.Kernel;
 using ScadGrasshopperPlugin.Components.GHParameters;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementProperties;
 using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
 
 namespace ScadGrasshopperPlugin.Components.Properties

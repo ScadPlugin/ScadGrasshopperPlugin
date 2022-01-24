@@ -4,6 +4,7 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Rhino.Geometry;
 using ScadGrasshopperPlugin.Components.GHParameters;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementProperties;
 using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
 using ScadGrasshopperPlugin.Helpers;
 

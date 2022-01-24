@@ -3,6 +3,7 @@ using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements;
 using System;
 using System.Collections.Generic;
 using GHPlugin.Scad.Core.Entities.Elements;
+using ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementProperties;
 
 namespace ScadGrasshopperPlugin.Components.GHParameters
 {

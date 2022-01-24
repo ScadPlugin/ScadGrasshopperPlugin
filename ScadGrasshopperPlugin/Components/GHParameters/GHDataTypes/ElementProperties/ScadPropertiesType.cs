@@ -1,9 +1,7 @@
 ﻿using GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces;
-using GHPlugin.Scad.Core.Entities.Elements;
-using GHPlugin.Scad.Core.Entities.Elements.Interface;
 using Grasshopper.Kernel.Types;
 
-namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.Elements
+namespace ScadGrasshopperPlugin.Components.GHParameters.GHDataTypes.ElementProperties
 {
     public class ScadPropertiesType : GH_Goo<IScadElementProperties>
    {
