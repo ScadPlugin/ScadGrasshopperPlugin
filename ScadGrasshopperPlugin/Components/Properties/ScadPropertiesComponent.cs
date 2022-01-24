@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GHPlugin.Scad.Core.Entities.ElementProperties;
 using GHPlugin.Scad.Core.Entities.Elements;
 using Grasshopper.Kernel;
 using ScadGrasshopperPlugin.Components.GHParameters;

@@ -59,9 +59,9 @@
     <Compile Include="Builder\ScadBuilderDirector.cs" />
     <Compile Include="Builder\ScadProcess\ElementCreator.cs" />
     <Compile Include="Core\Entities\Elements\Base\Element.cs" />
-    <Compile Include="Core\Entities\Elements\Interface\IScadElementProperties.cs" />
+    <Compile Include="Core\Entities\ElementProperties\Interfaces\IScadElementProperties.cs" />
     <Compile Include="Core\Entities\Elements\Interface\IScadNode.cs" />
-    <Compile Include="Core\Entities\Elements\ScadElementProperties.cs" />
+    <Compile Include="Core\Entities\ElementProperties\ScadElementProperties.cs" />
     <Compile Include="Core\Entities\Elements\ScadLineElement.cs" />
     <Compile Include="Core\Entities\Elements\ScadNode.cs" />
     <Compile Include="Core\Entities\MainScad.cs" />

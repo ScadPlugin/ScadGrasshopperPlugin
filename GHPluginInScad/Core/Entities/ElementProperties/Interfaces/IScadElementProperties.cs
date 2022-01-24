@@ -1,4 +1,4 @@
-﻿namespace GHPlugin.Scad.Core.Entities.Elements.Interface
+﻿namespace GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces
 {
     public interface IScadElementProperties
     {

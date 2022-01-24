@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces;
 using GHPlugin.Scad.Core.Entities.Elements.Interface;
 
 namespace GHPlugin.Scad.Core.Entities.Elements.Base

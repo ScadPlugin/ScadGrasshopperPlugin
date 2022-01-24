@@ -1,6 +1,6 @@
-﻿using GHPlugin.Scad.Core.Entities.Elements.Interface;
+﻿using GHPlugin.Scad.Core.Entities.ElementProperties.Interfaces;
 
-namespace GHPlugin.Scad.Core.Entities.Elements
+namespace GHPlugin.Scad.Core.Entities.ElementProperties
 {
     public sealed class ScadElementProperties : IScadElementProperties
     {
